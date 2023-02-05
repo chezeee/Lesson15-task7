@@ -4,13 +4,21 @@
  * @param {string} lastName
  * @param {number} age
  */
-function User(firstName, lastName, age) {}
+function User(firstName, lastName, age) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.age = age;
+}
 
 // This has to be a function (not an arrow function)
-User.prototype.getFullName = function () {};
+User.prototype.getFullName = function () {
+  return `${this.firstName} ${this.lastName}`;
+};
 
 // This has to be a function (not an arrow function)
-User.prototype.canVote = function () {};
+User.prototype.canVote = function () {
+  return this.age >= 18;
+};
 
 // Sample usage (do not modify)
 const user = new User("Sam", "Blue", 43);
